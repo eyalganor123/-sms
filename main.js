@@ -2,6 +2,18 @@ var state = {
   products: [],
 };
 
+test();
+
+function test() {
+  addProduct('mock description', 'mock vendor', 32, 0);
+  addProduct('mock description 2', 'mock vendor 2', 98, 1);
+  addProduct('mock description 3', 'mock vendor 3', 56, 2);
+
+  deleteProduct(2);
+
+  editProduct({description: 'changed description', id: 1});
+}
+
 function addProduct(description, vendor, stock, id) {
   var newProduct = {
     description: description,
