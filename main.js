@@ -12,6 +12,7 @@ function test() {
   deleteProduct(2);
 
   editProduct({description: 'changed description', id: 1});
+  console.log($);
 }
 
 function addProduct(description, vendor, stock, id) {
