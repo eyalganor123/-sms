@@ -1,15 +1,77 @@
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>SMS</title>
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src='main.js'></script>  
+<body>
+  <h1 id="header">Store Management System</h1>
+  <button onclick="showHideInventory()">Inventory</button>
+  <button onclick="showHideNewItem()">New Item</button>
+  <input type="number" placeholder="enter ID" class="search" onkeydown="search(this)" />
+  <span id="search" onclick="hideMe()">
+    <br>
+    <div>(click here to return)</div>
+  </span>
+  <br>
+  <section>
+    <table>
+      <thead>
+      </thead>
+      <tbody>
+        <tr id="title">
+          <td class="titles">ID</td>
+          <td class="titles">DESCRIPTION</td>
+          <td class="titles">VENDOR</td>
+          <td class="titles">COUNT</td>
+        </tr>
+        <tr id="newProducts">
+        </tr>
+
+
+
+      </tbody>
+    </table>
+
+  </section>
+  <h2 id="newItemDialog">
+    <p> ADD A NEW PRODUCT</p><br>
+
+    ID:<input autofocus type="number" class="inputClass" id="idInput"><br><br><br><br><br>
+    DESCRIPTION:<input type="text" class="inputClass" id="descriptionInput"><br><br><br><br><br>
+    VENDOR:<input type="text" class="inputClass" id="vendorInput"><br><br><br><br><br>
+    COUNT:<input type="number" class="inputClass" id="countInput"><br><br>
+    <br>
+
+    <button id="addNew" onclick="submit()">enter</button>
+
+
+  </h2>
+  <h2 id="editItemDialog">
+    <p>EDIT PRODUCT</p><br>
+
+    ID:<input autofocus type="number" class="inputClass" id="idEditInput" value="12312"><br><br><br><br><br>
+    DESCRIPTION:<input type="text" class="inputClass" id="descriptionEditInput"><br><br><br><br><br>
+    VENDOR:<input type="text" class="inputClass" id="vendorEditInput"><br><br><br><br><br>
+    COUNT:<input type="number" class="inputClass" id="countEditInput"><br><br>
+    <br>
+
+    <button id="editNew" onclick="submitEdit()">EDIT</button>
+    <button id="remove" onclick="submitRemove()">DELETE</button>
+
+
+
+  </h2>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src='main.js'></script>
 
 </body>
+
 </html>
